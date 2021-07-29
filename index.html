@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Portfolio</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="test/assets/favicon.png">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" type="text/css">
+
+    <script type="text/javascript" src="js/jquery.particleground.js"></script>
+    <script type="text/javascript" src="js/demo.js"></script>
+</head>
+
+<body>
+    <div id="mobile-menu-open" class="shadow-large">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <!-- End #mobile-menu-toggle -->
+    <header>
+        <div id="mobile-menu-close">
+            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <ul id="menu" class="shadow">
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+            <li>
+                <a href="#education">Education</a>
+            </li>
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </header>
+    <!-- End header -->
+
+    <div id="lead">
+        <div id="lead-content">
+            <div id="intro">
+                <h1>Abhinav Tembulkar</h1>
+                <h2>Software Engineer</h2>
+                <a href="abhinav_tembulkar_resume.pdf" style="color: white;">Resume<img src="https://static.thenounproject.com/png/637945-200.png" height="35" width="35">
+                </a>
+                <a href="https://www.linkedin.com/in/abhinav-tembulkar-12b665150/" style="color: white;"><i class="fab fa-linkedin" style="font-size: 2em;"></i></a> &nbsp
+                <a href="https://github.com/abhinavtembulkar" style="color: white;"><i class="fab fa-github" style="font-size: 2em;"></i></a> &nbsp
+            </div>
+        </div>
+    </div>
+    <!-- End #lead-content -->
+
+    <div id="lead-overlay">
+        <div id="particles">
+        </div>
+    </div>
+
+    <div id="lead-down">
+        <span>
+            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+        </span>
+    </div>
+    <!-- End #lead-down -->
+    </div>
+    <!-- End #lead -->
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="heading">About Me</h2>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                        Hi ! I am a developer, passionate about Backend Development and Machine learning.
+                        I have experience in Backend Development in Python and Javascript, Machine laerning experience with openCV, TensorFlow.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End #about -->
+
+    <div id="experience" class="background-alt">
+        <h2 class="heading">Experience</h2>
+        <div id="experience-timeline">
+            <div data-date="Febrauary 2021 – April 2021">
+                <h3>JMoon Technologies Pvt. Ltd.</h3>
+                <h4>Machine Learning Intern</h4>
+                <ol>
+                    <li>Built backend for company’s Investment decision-making
+                        app using flask and mongoDB database.</li>
+                    <li>Worked on financial market data using several regression
+                        algorithms and data visualisation tasks.</li>
+                    <li>Worked on automating model training task and improving
+                        their performance using early stopping.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- End #experience -->
+
+    <div id="projects" class="background-alt">
+        <h2 class="heading">Projects</h2>
+        <div class="container">
+            <div class="row">
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/Facemaskdetector.png" height="300" width="300"/>
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Face mask detector</h3>
+                        <p>
+                        A ML model for combating corona virus by detecting face masks on
+                        peoples faces. Built using tensorflow framework .Uses pretrained
+                        model weights trained in tensorflow on dataset provided at this link.
+                        </p>
+                        <a href="https://github.com/abhinavtembulkar/Facemaskdetector">View Code</a>
+                        <a href="https://abhinavtembulkar.github.io/simple_mask_classifier">View Website</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/moviesentiment.png" height="300" width="300"/>
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Movie review sentiment prediction</h3>
+                        <p>
+                            A model which predicts positive or negative review based on a simple
+                            movie review dataset.Uses SWEM model for sentiment analysis.Built
+                            on Pytorch framework.
+                        </p>
+                        <a href="https://github.com/abhinavtembulkar/Movie-sentiment-prediction">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/GalaxyCNN.png" height="300" width="300"/>
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Galaxy CNN classifier</h3>
+                        <p>
+                            A CNN classifier built using Pytorch. Classifies galaxy images into 10
+                            output classes using Galaxy10 dataset.
+                        </p>
+                        <a href="https://github.com/abhinavtembulkar/galaxyCNNclassifier">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/SoundBars.gif" height="300" width="300"/>
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Reactive Soundbars</h3>
+                        <p>
+                            An innovative music visualization using frequency spectrum.Built
+                            using p5.js,HTML,CSS,JS.
+                        </p>
+                        <a href="https://abhinavtembulkar.github.io/ReactiveSoundBars/">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+            </div>
+        </div>
+    </div>
+    <!-- End #projects -->
+
+    <div id="experience" class="background-alt">
+        <h2 class="heading">Achievements</h2>
+        <ul>
+        <li>Rated 3 star on Codechef, Max rating 1641.Secured Global rank 114 in
+            Codechef Long Challenge December.</li>
+            
+        <li>Rated 6 star in problem solving on Hackerrank</li>
+        
+        <li>Published article titled Anti-aliasing on GeeksforGeeks 
+            <a href='https://www.geeksforgeeks.org/computer-graphics-antialiasing/'>Article Link</a></li>
+        </ul>
+        </div>
+    </div>
+
+    <div id="education">
+        <h2 class="heading">Education</h2>
+        <div class="education-block">
+            <h3>University School of Information, Communication and Technology</h3>
+            <h4>Dwarka, New Delhi</h4>
+            <span class="education-date">2017 - 2021</span>
+            <p>Bachelor of Technology in Computer Science and Engineering</p>
+            <p>CGPA till 6th sem: 7.69</p>
+        </div>
+        <!-- End .education-block -->
+
+        <div class="education-block">
+            <h3>Bharatiya Vidya Bhawan Mehta Vidyalaya</h3>
+            <h4>K.G. Marg, New Delhi</h4>
+            <span class="education-date">2015 - 2016</span>
+            <h4>Intermediate (12th CBSE)</h4>
+            <p>Percentage: 93.60%</p>
+        </div>
+        <!-- End .education-block -->
+
+        <div class="education-block">
+            <h3>Bharatiya Vidya Bhawan Mehta Vidyalaya</h3>
+            <h4>K.G. Marg, New Delhi</h4>
+            <span class="education-date">2013 - 2014</span>
+            <h4>Matriculation (1oth CBSE)</h4>
+            <p>CGPA: 10</p>
+        </div>
+        <!-- End .education-block -->
+
+    </div>
+    <!-- End #education -->
+
+    <div id="skills">
+        <h2 class="heading">Skills</h2>
+        <ul>
+            <li>Python</li>
+            <li>TensorFlow</li>
+            <li>Scikit-Learn</li>
+            <li>Flask</li>
+            <li>NumPy</li>
+            <li>MatplotLib</li>
+            <li>JavaScript</li>
+            <li>C</li>
+            <li>C++</li>
+            <li>Machine Learning</li>
+            <li>Deep Learning</li>
+            <li>SQL</li>
+            <li>Data Structures & Algorithms</li>
+            <li>Web Development</li>
+            <li>Backend Development</li>
+            <li>MongoDB</li>
+            <li>Git</li>
+            <li>Github</li>
+            <li>Heroku</li>
+        </ul>
+
+        <h2 class='heading'>Coursework</h2>
+        <ul>
+            <li>Data structures and algorithms</li>
+            <li>Algorithm Design and Analysis</li>
+            <li>Object Oriented Programming</li>
+            <li>Operating Systems</li>
+            <li>Database Managment System(DBMS)</li>
+        </ul>
+    </div>
+    <!-- End #skills -->
+
+    <div id="education">
+        <h2 class="heading">Trainings</h2>
+        <div class="education-block">
+            <h3>Introduction to machine learning - Duke University</h3>
+            <h4>Coursera</h4>
+            <span class="education-date">Jun 2020 - Jul 2020</span>
+        </div>
+        <!-- End .education-block -->
+
+        <div class="education-block">
+            <h3>Web development with NodeJS</h3>
+            <h4>Coding Blocks</h4>
+            <span class="education-date">Jun 2019 - Jul 2019</span>
+        </div>
+        <!-- End .education-block -->
+        
+        <div class="education-block">
+            <h3>C++ foundation with data structures</h3>
+            <h4>Coding Ninjas</h4>
+            <span class="education-date">Sept 2017 - Nov 2017</span>
+        </div>
+        <!-- End .education-block -->
+
+        <div class="education-block">
+            <h3>Python basics for data science</h3>
+            <h4>EDX</h4>
+            <span class="education-date">May 2020 - Jun 2020</span>
+        </div>
+        <!-- End .education-block -->
+    </div>
+    
+
+    <div id="contact">
+        <h2>Email</h2>
+        <h4><a href="mailto:abhinavtembulkar@gmail.com">abhinavtembulkar@gmail.com</a></h4>
+        <h2>Phone</h2>
+        <a href="tel:9654228946">9654228946</a>
+        <!-- End #contact-form -->
+        <ul class="skills">
+            <h4>
+            <li>
+                <a href="https://github.com/abhinavtembulkar" target="_blank">Github</a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/abhinav-tembulkar-12b665150/" target="_blank">LinkedIn</a>
+            </li>
+            <li>
+                <a href="https://abhinavtembulkar@gmail.com" target="_blank">Gmail</a>
+            </li>
+            </h4>
+        </ul>
+    </div>
+    <!-- End #contact -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 copyright">
+                    <p>
+                        Abhinav Tembulkar 2021
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/scripts.min.js"></script>
+</body>
+
+</html>
