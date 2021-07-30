@@ -3,10 +3,6 @@
 [![linkedin badge](https://img.shields.io/badge/abhinavtembulkar-30302f?style=flat&logo=linkedin)](https://www.linkedin.com/in/abhinav-tembulkar-12b665150/)
 [![Gmail Badge](https://img.shields.io/badge/abhinavtembulkar-30302f?style=flat&logo=gmail)](mailto:abhinavtembulkar@gmail.com)
 
-<!-- ![visitors](https://visitor-badge.laobi.icu/badge?page_id=AadumKhor.AadumKhor) -->
-<!-- [![GitHub followers](https://img.shields.io/github/followers/AadumKhor.svg?style=social&label=Follow)](https://github.com/AadumKhor?tab=followers) -->
-
-### Extra Details
 - 🔭 I am a Full stack developer and Machine Learning Enthusiast who loves to analyse datasets and improve predictions for profitable use cases.
 - 🌱 I am willing to collaborate on projects and hackathons.
 - 👯 I’m looking to collaborate on anything that requires code ;)
@@ -14,6 +10,8 @@
 - 📫 How to reach me: Via Gmail or LinkedIn
 
 ### My portofolio site :
-<a href='https://abhinavtembulkar.github.io/Portfolio/'>Portfolio</a>
+<a href='https://abhinavtembulkar.github.io/Portfolio/'>Portfolio Site</a>
 
-<!-- ![Aayush's GitHub Stats](https://github-readme-stats.vercel.app/api?username=AadumKhor&hide=[%22issues%22,%22contribs%22]&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515) -->
+
+
+![My GitHub Stats](https://github-readme-stats.vercel.app/api?username=abhinavtembulkar&hide=[%22issues%22,%22contribs%22]&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515)
