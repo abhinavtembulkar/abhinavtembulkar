@@ -1,12 +1,7 @@
 ## Hi There, I am Abhinav Tembulkar 👋 
 
-<a href="https://www.linkedin.com/in/abhinav-tembulkar-12b665150/">
-  <img align="center" alt="LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />
-</a>
-
-<a href="abhinavtembulkar@gmail.com">
-  <img align="center" alt="Gmail" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/gmail.svg" />
-</a>
+[![linkedin badge](https://img.shields.io/badge/abhinavtembulkar-30302f?style=flat&logo=linkedin)](https://www.linkedin.com/in/abhinav-tembulkar-12b665150/)
+[![Gmail Badge](https://img.shields.io/badge/abhinavtembulkar-30302f?style=flat&logo=gmail)](mailto:abhinavtembulkar@gmail.com)
 
 <!-- ![visitors](https://visitor-badge.laobi.icu/badge?page_id=AadumKhor.AadumKhor) -->
 <!-- [![GitHub followers](https://img.shields.io/github/followers/AadumKhor.svg?style=social&label=Follow)](https://github.com/AadumKhor?tab=followers) -->
