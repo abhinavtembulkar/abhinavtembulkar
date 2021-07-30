@@ -7,8 +7,6 @@
 <a href="abhinavtembulkar@gmail.com">
   <img align="center" alt="Gmail" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/gmail.svg" />
 </a>
-</br>
-</br>
 
 <!-- ![visitors](https://visitor-badge.laobi.icu/badge?page_id=AadumKhor.AadumKhor) -->
 <!-- [![GitHub followers](https://img.shields.io/github/followers/AadumKhor.svg?style=social&label=Follow)](https://github.com/AadumKhor?tab=followers) -->
@@ -22,7 +20,5 @@
 
 ### My portofolio site :
 <a href='https://abhinavtembulkar.github.io/Portfolio/'>Portfolio</a>
-
-
 
 <!-- ![Aayush's GitHub Stats](https://github-readme-stats.vercel.app/api?username=AadumKhor&hide=[%22issues%22,%22contribs%22]&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515) -->
