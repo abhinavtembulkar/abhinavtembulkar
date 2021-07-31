@@ -5,7 +5,6 @@
 
 - 🔭 I am a Full stack developer and Machine Learning Enthusiast who loves to work on new problems.
 - 🌱 I am willing to collaborate on projects and hackathons.
-- 👯 I’m looking to collaborate on anything that requires code ;)
 - 💬 How to reach me: Via Gmail or LinkedIn
 
 ### My portofolio site :
