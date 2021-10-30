@@ -15,7 +15,6 @@
     <link rel="shortcut icon" type="image/png" href="test/assets/favicon.png">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" type="text/css">
-
     <script type="text/javascript" src="js/jquery.particleground.js"></script>
     <script type="text/javascript" src="js/demo.js"></script>
 </head>
@@ -73,7 +72,7 @@
 
     <div id="lead-down">
         <span>
-            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            <i class="fa fa-chevron-down" aria-hidden="true"> </i>
         </span>
     </div>
     <!-- End #lead-down -->
@@ -88,8 +87,8 @@
                 </div>
                 <div class="col-md-8">
                     <p>
-                        Hi ! I am a developer, passionate about Backend Development and Machine learning.
-                        I have experience in Backend Development in Python and Javascript, Machine laerning experience with openCV, TensorFlow.
+                        Hi ! I am a Web developer with Btech degree in Computer Science, passionate about Backend Development and Machine learning.
+                        I love to solve problems by designing efficient algorithms and innovative applications.
                     </p>
                 </div>
             </div>
@@ -100,16 +99,26 @@
     <div id="experience" class="background-alt">
         <h2 class="heading">Experience</h2>
         <div id="experience-timeline">
-            <div data-date="Febrauary 2021 – April 2021">
+            <div data-date="February 2021 – April 2021">
                 <h3>JMoon Technologies Pvt. Ltd.</h3>
-                <h4>Machine Learning Intern</h4>
+                <h4>Backend Development Intern</h4>
                 <ol>
-                    <li>Built backend for company’s Investment decision-making
-                        app using flask and mongoDB database.</li>
-                    <li>Worked on financial market data using several regression
-                        algorithms and data visualisation tasks.</li>
-                    <li>Worked on automating model training task and improving
-                        their performance using early stopping.</li>
+                    <li>Built backend for company’s Investment decision-making app
+                        smarterangel.com using REST api in Flask and mongoDB database.</li>
+                    <li>Worked on visualising financial data in Javascript and HTML/CSS.</li>
+                    <li>Worked on automating model training task with time scheduling
+                        libraries in Python and improving their performance.</li>
+                </ol>
+            </div>
+            <div data-date="October 2020 – January 2021">
+                <h3>RPRC & Sons LLP</h3>
+                <h4>Web Developer Intern</h4>
+                <ol>
+                    <li>Built Backend for company payment portal and integrated razorpay
+                        API using REST api in NodeJS and Postgres database.</li>
+                    <li>Created Frontend of payment portal in ReactJS, JS and HTML/CSS.</li>
+                    <li>Deployed and managed the payment portal. Performed daily checks
+                        on database integrity and did bug fixes for website.</li>
                 </ol>
             </div>
         </div>
@@ -120,24 +129,7 @@
         <h2 class="heading">Projects</h2>
         <div class="container">
             <div class="row">
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/Facemaskdetector.png" height="300" width="300"/>
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Face mask detector</h3>
-                        <p>
-                        A ML model for combating corona virus by detecting face masks on
-                        peoples faces. Built using tensorflow framework .Uses pretrained
-                        model weights trained in tensorflow on dataset provided at this link.
-                        </p>
-                        <a href="https://github.com/abhinavtembulkar/Facemaskdetector">View Code</a>
-                        <a href="https://abhinavtembulkar.github.io/simple_mask_classifier">View Project</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                
+
                 <div class="project shadow-large">
                     <div class="project-image">
                         <img src="images/doctorchatapp.png" height="300" width="300"/>
@@ -154,20 +146,71 @@
                     </div>
                     <!-- End .project-info -->
                 </div>
-
+              
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/moviesentiment.png" height="300" width="300"/>
+                        <img src="images/ReactQoutesApp.png" height="300" width="300"/>
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
-                        <h3>Movie review sentiment prediction</h3>
+                        <h3>ReactQuotesApp</h3>
                         <p>
-                            A model which predicts positive or negative review based on a simple
-                            movie review dataset.Uses SWEM model for sentiment analysis.Built
-                            on Pytorch framework.
+                            A React App for getting quotes, allows users to comment and reply.
+                            Frontend in ReactJS and Backend using NodeJS, ExpressJS. Nested
+                            comments implemented using binary tree data structure & JSON.
                         </p>
-                        <a href="https://github.com/abhinavtembulkar/Movie-sentiment-prediction">View Code</a>
+                        <a href="http://reactquoteappscode.herokuapp.com/">View Code</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/LiveFlightStatus.png" height="300" width="300"/>
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Live Flight Status</h3>
+                        <p>
+                            A flight status tracker app, plots live status on map every 30 seconds.
+                            Built using AJAX, JS and HTML/CSS. Data fetched from Lufthansa
+                            and aviation stack APIs.Maps plotted using amcharts and bootstrap.
+                        </p>
+                        <a href="https://abhinavtembulkar.github.io/LiveFlightStatus/">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/FaceMaskDetector.png" height="300" width="300"/>
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Face mask detector</h3>
+                        <p>
+                            A ML model for combating corona virus by detecting face masks on
+                            peoples faces. Built using tensorflow framework .Uses pretrained
+                            model weights trained in tensorflow on dataset provided at this link.
+                        </p>
+                        <a href="https://github.com/abhinavtembulkar/Facemaskdetector">View Code</a>
+                        <a href="https://abhinavtembulkar.github.io/simple_mask_classifier">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/eventsmanagerapp.png" height="300" width="300"/>
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Events Manager App</h3>
+                        <p>
+                            An Events managing website with user session and login capability. Built using HTML, CSS,JS, Handlebars
+                            in front-end and NodeJS, ExpressJS in back-end with MongoDB.
+                        </p>
+                        <a href="https://eventsmanagerapp.herokuapp.com/">View Project</a>
                     </div>
                     <!-- End .project-info -->
                 </div>
@@ -187,18 +230,34 @@
                     </div>
                     <!-- End .project-info -->
                 </div>
-                <!-- End .project -->
-
+                
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/GalaxyCNN.png" height="300" width="300"/>
+                        <img src="images/BurgerBuilderApp.png" height="300" width="300"/>
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
-                        <h3>Galaxy CNN classifier</h3>
+                        <h3>BurgerBuilderApp</h3>
                         <p>
-                            A CNN classifier built using Pytorch. Classifies galaxy images into 10
-                            output classes using Galaxy10 dataset.
+                            A burger builder app built using ReactJS ,Bootstrap, CSS modules and other 
+                            relevant modules. Allows user to customise and order burgers according to 
+                            their needs. A complete Front-end Project.
+                        </p>
+                        <a href="http://reactquoteappscode.herokuapp.com/">View Code</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/TodoListApp.png" height="300" width="300"/>
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>TodoListApp</h3>
+                        <p>
+                            A full Stack project made using REST APIs in Backend using NodeJS,ExpressJS and
+                            using Vue.js,HTML,CSS,JS in Frontend and MongoDB with Sequelize for Database.
                         </p>
                         <a href="https://github.com/abhinavtembulkar/galaxyCNNclassifier">View Code</a>
                     </div>
@@ -207,20 +266,20 @@
                 
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/eventsmanagerapp.png" height="300" width="300"/>
+                        <img src="images/FreqBars.png" height="300" width="300"/>
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
-                        <h3>Events Manager App</h3>
+                        <h3>Freqbars</h3>
                         <p>
-                            An Events managing website. Built using HTML, CSS,JS, Handlebars
-                            in front-end and NodeJS, ExpressJS in back-end with MongoDB.
+                            A CRAZY music visualization based on p5.js library.Utilizes frequency 
+                            spectrum of song to generate this visualization . User Mic input also enabled.
                         </p>
-                        <a href="https://eventsmanagerapp.herokuapp.com/">View Project</a>
+                        <a href="http://reactquoteappscode.herokuapp.com/">View Code</a>
                     </div>
                     <!-- End .project-info -->
                 </div>
-
+                
             </div>
         </div>
     </div>
@@ -229,12 +288,12 @@
     <div id="experience" class="background-alt">
         <h2 class="heading">Achievements</h2>
         <ul>
-        <li>Rated 3 star on Codechef, Max rating 1641.Secured Global rank 114 in
-            Codechef Long Challenge December.</li>
-            
-        <li>Rated 6 star in problem solving on Hackerrank</li>
-        
-        <li>Published article titled Anti-aliasing on GeeksforGeeks 
+            <li>Rated 3 star on Codechef, Max rating 1641.</li>
+            <li>Secured Global rank 114 in Codechef Long Challenge December.</li>
+            <li>Rated 6 star in problem solving on Hackerrank</li>
+            <li>Secured Global rank 6730 in Google kickstart round G .</li>
+            <li>Awarded JSTSE scholarship by Directorate of Education, Delhi in Academic year 2013-14.</li>
+            <li>Published article titled Anti-aliasing on GeeksforGeeks 
             <a href='https://www.geeksforgeeks.org/computer-graphics-antialiasing/'>Article Link</a></li>
         </ul>
         </div>
@@ -247,7 +306,7 @@
             <h4>Dwarka, New Delhi</h4>
             <span class="education-date">2017 - 2021</span>
             <p>Bachelor of Technology in Computer Science and Engineering</p>
-            <p>CGPA till 6th sem: 7.69</p>
+            <p>CGPA: 7.96</p>
         </div>
         <!-- End .education-block -->
 
@@ -264,7 +323,7 @@
             <h3>Bharatiya Vidya Bhawan Mehta Vidyalaya</h3>
             <h4>K.G. Marg, New Delhi</h4>
             <span class="education-date">2013 - 2014</span>
-            <h4>Matriculation (1oth CBSE)</h4>
+            <h4>Matriculation (10th CBSE)</h4>
             <p>CGPA: 10</p>
         </div>
         <!-- End .education-block -->
@@ -276,32 +335,32 @@
         <h2 class="heading">Skills</h2>
         <ul>
             <b>
-            <li>Python</li>
             <li>JavaScript</li>
+            <li>Python</li>
             <li>C</li>
             <li>C++</li>
-            <li>HTML</li>
-            <li>CSS</li>
+            <li>Bash</li>
             </b>
             <i>
-            <li>Flask</li>
             <li>NodeJS</li>
+            <li>Flask</li>
             <li>ExpressJS</li>
-            <li>TensorFlow</li>
-            <li>Scikit-Learn</li>
-            </i>
+            <li>HTML/CSS</li>
+            <li>ReactJS</li>
             <li>SQL</li>
             <li>MongoDB</li>
-            <li>NumPy</li>
-            <li>MatplotLib</li>
-            <li>Data Structures & Algorithms</li>
-            <li>Machine Learning</li>
-            <li>Deep Learning</li>
-            <li>Web Development</li>
-            <li>Backend Development</li>
+            </i>
             <li>Git</li>
             <li>Github</li>
+            <li>REST APIs</li>
+            <li>JSON</li>
+            <li>TensorFlow</li>
+            <li>OpenCV</li>
             <li>Heroku</li>
+            
+            <li>Data Structures & Algorithms</li>
+            <li>Web Development</li>
+            <li>Backend Development</li>
         </ul>
 
         <h2 class='heading'>Coursework</h2>
@@ -348,24 +407,32 @@
     
 
     <div id="contact">
-        <h2>Email</h2>
-        <h4><a href="mailto:abhinavtembulkar@gmail.com">abhinavtembulkar@gmail.com</a></h4>
-        <h2>Phone</h2>
-        <a href="tel:9654228946">9654228946</a>
-        <!-- End #contact-form -->
-        <ul class="skills">
-            <h4>
-            <li>
-                <a href="https://github.com/abhinavtembulkar" target="_blank">Github</a>
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/in/abhinav-tembulkar-12b665150/" target="_blank">LinkedIn</a>
-            </li>
-            <li>
-                <a href="https://abhinavtembulkar@gmail.com" target="_blank">Gmail</a>
-            </li>
-            </h4>
-        </ul>
+        <div class="container">
+            <div style="display: flex;">
+                <div style="width: 50%;">
+                    <h2>Email</h2>
+                    <h4><a href="mailto:abhinavtembulkar@gmail.com">abhinavtembulkar@gmail.com</a></h4>
+                    <h2>Phone</h2>
+                    <a href="tel:9654228946">9654228946</a>
+                </div>
+                <div style="width: 50%;">
+                    <h2>Links</h2>
+                    <ul>
+                      <b>  
+                        <li>
+                            <a href="https://github.com/abhinavtembulkar" target="_blank">Github</a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/abhinav-tembulkar-12b665150/" target="_blank">LinkedIn</a>
+                        </li>
+                        <li>
+                            <a href="https://abhinavtembulkar@gmail.com" target="_blank">Gmail</a>
+                        </li>
+                    </b>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- End #contact -->
 
