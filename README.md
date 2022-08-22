@@ -7,7 +7,7 @@
 - 🌱 I am willing to collaborate on projects and hackathons.
 - 💬 How to reach me: Via Gmail or LinkedIn
 
-### My portofolio site :
+### My portfolio site :
 <a href='https://abhinavtembulkar.github.io/abhinavtembulkar/'><b>Portfolio Site:</b> https://abhinavtembulkar.github.io/abhinavtembulkar/</a>
 
 
