@@ -9,7 +9,7 @@ export const profile = {
   specialty: 'Robotics & computer vision',
   headline: ['From pixels', 'to robot motion.'],
   subtitle: 'Perception. Code. Real robots.',
-  intro: 'I build camera-based perception systems and connect them to real robots. My work spans 6-DoF tracking, ROS 2 integration, and human–robot interaction.',
+  intro: 'I build camera-based perception systems for robots. I work on live pose tracking for TurtleBots and hand tracking for an xArm6 cup handover.',
   about: 'I’m a Computer Science and Engineering master’s graduate from the University at Buffalo. I enjoy the practical work between a vision model and a moving robot: calibrating cameras, aligning coordinate frames, integrating software, and understanding what happens when tracking fails.',
   availability: 'Interested in robotics software, perception, and computer vision opportunities.',
   educationLine: 'MS CSE · University at Buffalo',
@@ -20,9 +20,10 @@ export const profile = {
   // a clean, up-to-date PDF at public/resume.pdf.
   resume: 'https://www.acsu.buffalo.edu/~atembulk/Robotics_Resume_Perception.pdf',
 
-  coverPhoto: '', // './media/cover.webp' — wide cover photo / video poster
+  coverPhoto: './media/wafflebot-assembly.webp',
   coverVideo: '', // './media/cover.mp4' — optional muted looping MP4
-  coverAlt: 'Abhinav working with a robot and camera setup',
+  coverAlt: 'Abhinav assembling a TurtleBot Waffle at his lab workbench',
+  coverCaption: 'Me assembling a waffelbot3',
   portrait: '', // './media/portrait.webp' — optional Design 2 / About photo
   portraitAlt: 'Abhinav Tembulkar',
 };
@@ -33,8 +34,8 @@ export const projects = [
     id: 'megapose',
     category: 'Perception',
     status: 'Featured project',
-    title: 'Real-time object pose tracking',
-    description: 'A tracking pipeline built around MegaPose, connecting live camera input to 6-DoF pose estimates and ROS 2. Includes prior-frame propagation, tracking recovery, and TurtleBot integration.',
+    title: 'Real-time 6-DoF Pose Tracking with MegaPose',
+    description: 'I adapted MegaPose to track an object from a live camera. Each frame starts from the previous pose estimate. If the tracker loses the object, the pipeline can recover and resume streaming poses to ROS 2.',
     contribution: 'I implemented tracking and recovery logic, connected camera input, and streamed pose estimates into ROS 2. MegaPose provides the underlying pose-estimation model.',
     details: [
       'Connect RGB camera observations and a CAD model to the pose-tracking pipeline.',
@@ -42,12 +43,14 @@ export const projects = [
       'Integrate camera calibration, coordinate transforms, and pose feedback with robot software.',
     ],
     results: [], // Example structure: ['Measured result, conditions, and evidence.']
-    tags: ['MegaPose', 'ROS 2', 'OpenCV', 'ZED / RealSense'],
+    tags: ['MegaPose', 'ROS 2', 'OpenCV', 'Camera calibration'],
     illustration: 'pose',
-    mediaLabel: 'Camera feed and object-pose overlay',
+    mediaLabel: 'Detected corners on a ChArUco calibration board held in front of the lab camera',
+    caption: 'Camera calibration · Detected corners follow the board as I change its angle.',
+    videoLabel: 'Watch calibration',
     file: 'megapose',
-    photo: '', // './media/megapose-poster.webp'
-    video: '', // './media/megapose-demo.mp4'
+    photo: './media/charuco-calibration.webp',
+    video: './media/charuco-calibration.mp4',
     demoUrl: '', // Public YouTube/Vimeo link; leave video blank if hosted elsewhere.
     code: '', // Public project repository URL.
     relatedWork: [], // Add the original MegaPose paper/repository with attribution.
@@ -58,7 +61,7 @@ export const projects = [
     category: 'Manipulation',
     status: 'Team project',
     title: 'Vision-guided human–robot handover',
-    description: 'An xArm6 cup-handover team demo using hand and gesture perception. My contribution focused on perception and integration within the larger robot system.',
+    description: 'Our team built a cup-handover demo with an xArm6. I developed the hand and gesture perception modules and used camera-to-world transforms to connect them to the arm’s handover logic.',
     contribution: 'I built MediaPipe/Viam perception modules for hand tracking and gestures, and integrated their outputs with the team’s handover system.',
     details: [
       'Expose hand position, handedness, and gesture information through custom Viam Vision modules.',
@@ -81,32 +84,35 @@ export const projects = [
     id: 'qwen',
     category: 'Autonomy',
     status: 'In development',
-    title: 'Language-guided TurtleBot navigation',
-    description: 'A local Qwen vision-language model selects constrained motion primitives using pose feedback and a goal. Current work connects the model client to ROS 2 execution and motion checks.',
-    contribution: 'I’m connecting the model client, pose feedback, and a ROS 2 motion interface in an ongoing prototype.',
+    title: 'Language-guided multi-robot navigation',
+    description: 'I’m building a ROS 2 system that turns an instruction into waypoint goals for TurtleBots. Qwen sees the arena image and the robots’ Vicon poses. A separate controller follows the proposed waypoints after I review and release the plan.',
+    contribution: 'In qwen_controller, I connect the camera, pose snapshots, and model client to waypoint execution in ROS 2 Jazzy.',
     details: [
-      'Translate a task goal and robot observations into a constrained action choice.',
-      'Connect the selected action to the ROS 2 robot interface.',
-      'Develop motion checks, stop conditions, and evaluation scenarios.',
+      'The client checks robot names, coordinates, and arena bounds before storing a proposed plan.',
+      'Each robot follows its own waypoint sequence using pose feedback. Stale tracking stops the controller.',
+      'Obstacle avoidance and inter-robot collision checking remain open work.',
     ],
     results: [],
     tags: ['Qwen', 'ROS 2', 'Python', 'TurtleBot3'],
     illustration: 'arena',
-    mediaLabel: 'Task goal, chosen action, and robot motion',
+    mediaLabel: 'Six camera views of the physical TurtleBot arena',
+    caption: 'Lab footage · Six views of the arena used for multi-robot work.',
+    videoLabel: 'Watch arena footage',
     file: 'qwen-turtlebot',
-    photo: '', // './media/qwen-turtlebot-poster.webp'
-    video: '', // './media/qwen-turtlebot-demo.mp4'
+    photo: './media/six-arena-views.webp',
+    video: './media/six-arena-views.mp4',
     demoUrl: '',
     code: '',
     relatedWork: [],
-    editingNote: 'Confirm the exact Qwen model and tested action set. Add a complete goal-to-outcome run, intervention count, stop conditions, and current limitations. Keep In development until the evidence supports a stronger status.',
+    repository: { name: 'qwen_controller', url: 'https://github.com/CoderAdonis313/qwen_controller' },
+    editingNote: 'Add a recording that pairs an instruction with its executed path.',
   },
   {
     id: 'vertiencoder',
     category: 'Robot learning',
     status: 'Reproduction / study',
-    title: 'Learning off-road robot dynamics',
-    description: 'A VertiEncoder reproduction and study of learned off-road kinodynamics, including forward and inverse dynamics and behavior-cloning tasks.',
+    title: 'VertiEncoder for High-Speed Off-Road Navigation',
+    description: 'I reproduced parts of VertiEncoder to study how a self-supervised model learns off-road vehicle dynamics in BeamNG. The field photos and videos below show the physical rover on snow.',
     contribution: 'I studied and reproduced parts of the VertiEncoder workflow, exploring learned dynamics and behavior cloning with simulation data.',
     details: [
       'Work with simulation data for off-road robot dynamics.',
@@ -116,10 +122,21 @@ export const projects = [
     results: [],
     tags: ['PyTorch', 'Transformers', 'Behavior cloning', 'BeamNG'],
     illustration: 'terrain',
-    mediaLabel: 'Reproduction experiment or result plot',
+    mediaLabel: 'An off-road rover following tire tracks in deep snow',
+    caption: 'Outdoor field footage · The rover drives through snow between existing tire tracks.',
+    videoLabel: 'Watch snow run',
     file: 'vertiencoder',
-    photo: '', // './media/vertiencoder-poster.webp'
-    video: '', // './media/vertiencoder-demo.mp4'
+    photo: './media/offroad-snow-tracks.webp',
+    video: './media/offroad-tracks.mp4',
+    secondRun: {
+      video: './media/offroad-turn.mp4', photo: './media/offroad-snow-turn.webp',
+      label: 'A second run across the snow, seen from farther back.',
+    },
+    fieldPhotos: [
+      { photo: './media/offroad-rover.webp', label: 'Front view of the rover and its tires on packed snow.' },
+      { photo: './media/offroad-patchy-snow.webp', label: 'The rover on patchy snow with exposed ground between its tracks.' },
+      { photo: './media/offroad-laptop.webp', label: 'The field laptop beside the snow-covered test area.' },
+    ],
     demoUrl: '',
     code: '',
     relatedWork: [], // [{ label: 'Original paper', url: 'https://...' }]
@@ -130,15 +147,20 @@ export const projects = [
 export const research = [
   {
     status: 'Ongoing',
-    title: 'Multi-robot experimental evaluation',
-    description: 'Developing a repeatable physical experimentation setup and evaluation plan for multi-robot research.',
+    title: 'Cooperative signal-source localization',
+    description: 'How should a team of TurtleBots search for a source when each robot can only sample signal strength where it stands? I’m integrating the physical testbed for Bayes-Swarm and preparing comparable trials. My reconstructions repository includes the ROS 2 recording tools I use to capture runs for later analysis.',
+    repository: { name: 'reconstructions', url: 'https://github.com/CoderAdonis313/reconstructions' },
+    photo: './media/arena-setup.webp',
+    video: './media/arena-setup.mp4',
+    mediaLabel: 'Abhi placing TurtleBots at different positions in the laboratory arena',
+    caption: 'Testbed preparation · Placing the robots before a run.',
     url: '',
     editingNote: 'Add the public research question, your role, collaborators, and validated outcomes when ready. RA-L is a target, not a publication claim.',
   },
   {
     status: 'Graduate research',
-    title: 'Robot perception & pose estimation',
-    description: 'Graduate research in robotics and perception at the University at Buffalo.',
+    title: 'Robot Perception Pipeline for 6-DoF Pose Estimation',
+    description: 'I completed graduate research in robot perception and 6-DoF pose estimation at the University at Buffalo.',
     url: '',
     editingNote: 'Keep this high level while the thesis is under embargo. Add a public abstract or approved link only when shareable.',
   },

@@ -9,6 +9,11 @@ function SectionHeading({ number, label, title, children }) {
   return <div className="section-heading"><div><p className="eyebrow">{number} / {label}</p><h2>{title}</h2></div>{children && <p>{children}</p>}</div>;
 }
 
+function RepositoryLink({ repository }) {
+  if (!repository) return null;
+  return <ExternalLink href={repository.url}>{repository.name} (private repository) ↗</ExternalLink>;
+}
+
 function ProjectDialog({ project, onClose }) {
   const dialog = useRef(null);
   useEffect(() => {
@@ -25,13 +30,30 @@ function ProjectDialog({ project, onClose }) {
       <button className="close-dialog" onClick={onClose} aria-label="Close project details" autoFocus>Close ×</button>
       <p className="eyebrow">{project.category} · {project.status}</p>
       <h2 id="dialog-title">{project.title}</h2>
-      <Media photo={project.photo} video={project.video} kind={project.illustration} label={project.mediaLabel} path={`public/media/${project.file}-demo.mp4`} />
+      <div className={project.secondRun ? 'field-runs' : undefined}>
+        <div>
+          <Media photo={project.photo} video={project.video} kind={project.illustration} label={project.mediaLabel} path={`public/media/${project.file}-demo.mp4`} />
+          {project.caption && <p className="lab-caption">{project.caption}</p>}
+        </div>
+        {project.secondRun && <div>
+          <Media video={project.secondRun.video} photo={project.secondRun.photo} label={project.secondRun.label} />
+          <p className="lab-caption">{project.secondRun.label}</p>
+        </div>}
+      </div>
       <h3>My contribution</h3><p>{project.contribution}</p>
       {project.details.length > 0 && <><h3>Inside the project</h3><ul className="detail-list">{project.details.map(item => <li key={item}>{item}</li>)}</ul></>}
       {project.results.length > 0 && <><h3>Results</h3><ul className="detail-list">{project.results.map(item => <li key={item}>{item}</li>)}</ul></>}
+      {project.fieldPhotos && <section>
+        <h3>Field photos</h3>
+        <div className="field-photos">{project.fieldPhotos.map(item => <figure key={item.photo}>
+          <a href={item.photo} target="_blank" rel="noreferrer"><img src={item.photo} alt={item.label} loading="lazy" /></a>
+          <figcaption className="lab-caption">{item.label}</figcaption>
+        </figure>)}</div>
+      </section>}
       <div className="project-links">
-        <ExternalLink href={project.demoUrl || project.video}>Watch demo ↗</ExternalLink>
+        <ExternalLink href={project.demoUrl}>Watch demo ↗</ExternalLink>
         <ExternalLink href={project.code}>Code ↗</ExternalLink>
+        <RepositoryLink repository={project.repository} />
         {project.relatedWork.map(link => <ExternalLink href={link.url} key={link.url}>{link.label} ↗</ExternalLink>)}
       </div>
       {siteConfig.showEditingHints && <p className="editing-note"><b>To complete this project:</b> {project.editingNote}</p>}
@@ -50,13 +72,16 @@ function Work() {
       {categories.map(category => <button key={category} aria-pressed={filter === category} onClick={() => setFilter(category)}>{category}</button>)}
     </div><span className="project-count" aria-live="polite">{shown.length} {shown.length === 1 ? 'project' : 'projects'}</span></div>
     <div className="project-list">{shown.map(project => <article className="project-row" id={project.id} key={project.id}>
-      <div className="project-visual"><Media photo={project.photo} video={project.photo ? '' : project.video} kind={project.illustration} label={project.mediaLabel} path={`public/media/${project.file}-poster.webp`} /></div>
+      <div className="project-visual"><Media photo={project.photo} video={project.photo ? '' : project.video} kind={project.illustration} label={project.mediaLabel} path={`public/media/${project.file}-poster.webp`} />
+        {project.caption && <p className="lab-caption">{project.caption}</p>}
+      </div>
       <div className="project-copy">
         <p className="eyebrow">{project.category}<span className="status-tag">{project.status}</span></p>
         <h3>{project.title}</h3><p>{project.description}</p>
         <div className="tags">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div>
         <div className="project-links"><button onClick={() => setSelected(project)} aria-label={`Project notes: ${project.title}`}>Project notes <span>↗</span></button>
-          <ExternalLink href={project.demoUrl || project.video}>Watch demo ↗</ExternalLink><ExternalLink href={project.code}>Code ↗</ExternalLink>
+          <ExternalLink href={project.demoUrl || project.video}>{project.videoLabel || 'Watch demo'} ↗</ExternalLink><ExternalLink href={project.code}>Code ↗</ExternalLink>
+          <RepositoryLink repository={project.repository} />
         </div>
       </div>
     </article>)}</div>
@@ -70,6 +95,11 @@ function Research() {
     <SectionHeading number="02" label="Research" title="Questions I’m exploring.">Ongoing experiments and graduate research.</SectionHeading>
     {research.map(item => <div className="research-row" key={item.title}><span className="research-status">{item.status}</span><div>
       <h3>{item.title}</h3><p>{item.description}</p><ExternalLink href={item.url}>Read more ↗</ExternalLink>
+      <RepositoryLink repository={item.repository} />
+      {item.video && <div className="lab-footage">
+        <Media photo={item.photo} video={item.video} label={item.mediaLabel} />
+        <p className="lab-caption">{item.caption}</p>
+      </div>}
       {siteConfig.showEditingHints && <p className="editing-note">{item.editingNote}</p>}
     </div></div>)}
   </div></section>;
@@ -95,6 +125,10 @@ function About() {
       <div>
         {hasPortrait && <><p className="eyebrow">04 / A little about me</p><h2>Curious about the code.<br /><em>Hands-on with the robot.</em></h2></>}
         <p>{profile.about}</p>
+        <div className="lab-footage">
+          <Media photo="./media/wafflebot-workbench.webp" video="./media/wafflebot-workbench.mp4" label="Abhi assembling the TurtleBot at the workbench" />
+          <p className="lab-caption">At the workbench · Assembling the TurtleBot Waffle.</p>
+        </div>
         <div className="education-list">{education.map(item => <div className="education" key={item.degree}><span>{item.dates}</span><div><b>{item.degree}</b><br />{item.school}</div></div>)}</div>
         {experience.length > 0 && <div className="experience"><h3>Before robotics</h3><p className="experience-intro">A foundation in building and debugging software.</p>{experience.map(item => <div className="experience-row" key={item.company}>
           <div><b>{item.company}</b><span>{item.dates}</span></div><p className="experience-role">{item.role}</p><p>{item.description}</p>

@@ -50,6 +50,12 @@ export default function Hero() {
         onPhotoError={() => setFailed(value => ({ ...value, photoFailed: true }))}
         onVideoError={() => { setPlaying(false); setFailed(value => ({ ...value, videoFailed: true })); }} />
       <div className="cinema-shade" />
+      {photo && !video && profile.coverCaption && <span className="cover-caption">
+        <svg className="cover-pointer" viewBox="0 0 100 86" aria-hidden="true" focusable="false">
+          <path d="M94 82 Q82 31 9 9 M12 30 L9 9 L31 7" />
+        </svg>
+        {profile.coverCaption}
+      </span>}
     </div>}
     <Header />
     <div className="hero-main">
