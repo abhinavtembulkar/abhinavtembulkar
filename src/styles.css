@@ -304,6 +304,10 @@ img,video,svg {
   height:100%;
   width:100%
 }
+.cinema-background img {
+  transform: translateX(20%);
+  mask-image: linear-gradient(to right, transparent, black 6%);
+}
 .cinema-background .media figcaption {
   left:auto;
   right:40px;
@@ -1515,7 +1519,8 @@ code {
 .cover-pointer {
   position: absolute;
   bottom: 100%;
-  right: 44%;
+  right: max(44%, 20vw);
+  transform: translateX(20vw);
   width: clamp(58px, 7vw, 110px);
   fill: none;
   stroke: #fff;

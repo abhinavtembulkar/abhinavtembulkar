@@ -23,7 +23,7 @@ export const profile = {
   coverPhoto: './media/wafflebot-assembly.webp',
   coverVideo: '', // './media/cover.mp4' — optional muted looping MP4
   coverAlt: 'Abhinav assembling a TurtleBot Waffle at his lab workbench',
-  coverCaption: 'Me assembling a waffelbot3',
+  coverCaption: 'Assembling a waffelbot3',
   portrait: '', // './media/portrait.webp' — optional Design 2 / About photo
   portraitAlt: 'Abhinav Tembulkar',
 };
@@ -108,6 +108,10 @@ export const projects = [
     videoLabel: 'Watch arena footage',
     clipTitle: 'Six camera views of the TurtleBot arena',
     file: 'qwen-turtlebot',
+    cardImage: {
+      src: './media/multi-robot-navigation.webp',
+      alt: 'Four color-marked robots gathered around a white rectangular obstacle in the lab arena.',
+    },
     photo: './media/six-arena-views.webp',
     video: './media/six-arena-views.mp4',
     demoUrl: '',
@@ -186,6 +190,11 @@ export const assemblyClip = {
 };
 
 export const videoDemos = [
+  {
+    clipTitle: 'Four-robot navigation with language instructions',
+    video: './media/four-robot-run.mp4',
+    photo: './media/four-robot-run.webp',
+  },
   ...projects,
   ...research,
   assemblyClip,
