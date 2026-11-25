@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { profile, projects, skills, research, education, experience, gallery } from './content';
+import { profile, projects, skills, research, education, experience, gallery, videoDemos, assemblyClip } from './content';
 import { siteConfig } from './site.config';
 import Hero from './components/Hero';
 import Media from './components/Media';
@@ -30,16 +30,8 @@ function ProjectDialog({ project, onClose }) {
       <button className="close-dialog" onClick={onClose} aria-label="Close project details" autoFocus>Close ×</button>
       <p className="eyebrow">{project.category} · {project.status}</p>
       <h2 id="dialog-title">{project.title}</h2>
-      <div className={project.secondRun ? 'field-runs' : undefined}>
-        <div>
-          <Media photo={project.photo} video={project.video} kind={project.illustration} label={project.mediaLabel} path={`public/media/${project.file}-demo.mp4`} />
-          {project.caption && <p className="lab-caption">{project.caption}</p>}
-        </div>
-        {project.secondRun && <div>
-          <Media video={project.secondRun.video} photo={project.secondRun.photo} label={project.secondRun.label} />
-          <p className="lab-caption">{project.secondRun.label}</p>
-        </div>}
-      </div>
+      <Media photo={project.photo} video={project.video} kind={project.illustration} label={project.mediaLabel} path={`public/media/${project.file}-demo.mp4`} />
+      {project.caption && <p className="lab-caption">{project.caption}</p>}
       <h3>My contribution</h3><p>{project.contribution}</p>
       {project.details.length > 0 && <><h3>Inside the project</h3><ul className="detail-list">{project.details.map(item => <li key={item}>{item}</li>)}</ul></>}
       {project.results.length > 0 && <><h3>Results</h3><ul className="detail-list">{project.results.map(item => <li key={item}>{item}</li>)}</ul></>}
@@ -72,8 +64,8 @@ function Work() {
       {categories.map(category => <button key={category} aria-pressed={filter === category} onClick={() => setFilter(category)}>{category}</button>)}
     </div><span className="project-count" aria-live="polite">{shown.length} {shown.length === 1 ? 'project' : 'projects'}</span></div>
     <div className="project-list">{shown.map(project => <article className="project-row" id={project.id} key={project.id}>
-      <div className="project-visual"><Media photo={project.photo} video={project.photo ? '' : project.video} kind={project.illustration} label={project.mediaLabel} path={`public/media/${project.file}-poster.webp`} />
-        {project.caption && <p className="lab-caption">{project.caption}</p>}
+      <div className="project-visual"><Media photo={project.cardImage?.src || project.photo} video={project.cardImage || project.photo ? '' : project.video} kind={project.illustration} label={project.cardImage?.alt || project.mediaLabel} path={`public/media/${project.file}-poster.webp`} />
+        {project.caption && !project.cardImage && <p className="lab-caption">{project.caption}</p>}
       </div>
       <div className="project-copy">
         <p className="eyebrow">{project.category}<span className="status-tag">{project.status}</span></p>
@@ -89,12 +81,23 @@ function Work() {
   </section>;
 }
 
+function VideoDemos() {
+  return <section className="section video-demos" id="videos" aria-labelledby="videos-heading">
+    <h2 id="videos-heading">Video demos</h2>
+    <div className="demo-grid">{videoDemos.map(clip => <figure key={clip.video}>
+      <video controls playsInline preload="none" src={clip.video} poster={clip.photo} aria-label={clip.clipTitle} />
+      <figcaption>{clip.clipTitle}</figcaption>
+    </figure>)}</div>
+  </section>;
+}
+
 function Research() {
   if (!research.length) return null;
   return <section className="research-wrap" id="research"><div className="section">
     <SectionHeading number="02" label="Research" title="Questions I’m exploring.">Ongoing experiments and graduate research.</SectionHeading>
     {research.map(item => <div className="research-row" key={item.title}><span className="research-status">{item.status}</span><div>
       <h3>{item.title}</h3><p>{item.description}</p><ExternalLink href={item.url}>Read more ↗</ExternalLink>
+      {item.sectionLink && <a href={item.sectionLink}>See my thesis defense ↓</a>}
       <RepositoryLink repository={item.repository} />
       {item.video && <div className="lab-footage">
         <Media photo={item.photo} video={item.video} label={item.mediaLabel} />
@@ -103,6 +106,21 @@ function Research() {
       {siteConfig.showEditingHints && <p className="editing-note">{item.editingNote}</p>}
     </div></div>)}
   </div></section>;
+}
+
+function ThesisDefense() {
+  return <section id="thesis-defense" className="section defense-section" aria-labelledby="defense-title">
+    <p className="eyebrow">University at Buffalo · M.S. in Computer Science and Engineering</p>
+    <h2 id="defense-title">Thesis defense</h2>
+    <div className="defense-intro">
+      <p>A visual marker gives a robot a reference point in the scene. My thesis asked whether a three-dimensional marker could help a robot judge both where the marker is and which way it faces when viewed from an awkward angle. Together, that position and orientation are called a six-degree-of-freedom (6-DoF) pose.</p>
+      <p>I built a pipeline to render markers at known poses, varying the camera angle, lighting, and how much of each marker was visible. I compared pose estimates from AprilTag and MegaPose with those known poses, measuring how far each estimate was off in position and in rotation. I also evaluated the approach on physical hardware, including a TurtleBot3 and a Parrot quadcopter.</p>
+    </div>
+    <div className="defense-photos">
+      <figure><img loading="lazy" src="./media/thesis-defense-presentation.webp" alt="Abhinav presenting at the front of the room beside his defense slides" /><figcaption>Presenting my research at the University at Buffalo.</figcaption></figure>
+      <figure><img loading="lazy" src="./media/adams-lab-team.webp" alt="Abhinav and his lab mates standing in front of the ADAMS Lab sign" /><figcaption>With my ADAMS Lab mates on defense day.</figcaption></figure>
+    </div>
+  </section>;
 }
 
 function Skills() {
@@ -126,7 +144,7 @@ function About() {
         {hasPortrait && <><p className="eyebrow">04 / A little about me</p><h2>Curious about the code.<br /><em>Hands-on with the robot.</em></h2></>}
         <p>{profile.about}</p>
         <div className="lab-footage">
-          <Media photo="./media/wafflebot-workbench.webp" video="./media/wafflebot-workbench.mp4" label="Abhi assembling the TurtleBot at the workbench" />
+          <Media photo={assemblyClip.photo} video={assemblyClip.video} label="Abhi assembling the TurtleBot at the workbench" />
           <p className="lab-caption">At the workbench · Assembling the TurtleBot Waffle.</p>
         </div>
         <div className="education-list">{education.map(item => <div className="education" key={item.degree}><span>{item.dates}</span><div><b>{item.degree}</b><br />{item.school}</div></div>)}</div>
@@ -154,6 +172,12 @@ function Footer() {
 export default function App() {
   return <div className="portfolio"><a className="skip-link" href="#work">Skip to projects</a><Hero />
     {siteConfig.showEditingHints && <div className="editing-strip">Editing hints are on. Change showEditingHints to false in src/site.config.js before sharing.</div>}
-    <main><Work /><Research /><Skills /><About /></main><Footer />
+    <main><Work /><VideoDemos /><Research /><ThesisDefense /><Skills /><About /></main><Footer />
+    <section className="lab-banner" id="adams-lab" aria-labelledby="lab-banner-title">
+      <div className="section">
+        <h2 id="lab-banner-title">With my lab mates at ADAMS Lab</h2>
+        <video controls playsInline preload="none" poster="./media/adams-lab-team.webp" src="./media/adams-lab-banner.mp4" aria-labelledby="lab-banner-title" />
+      </div>
+    </section>
   </div>;
 }

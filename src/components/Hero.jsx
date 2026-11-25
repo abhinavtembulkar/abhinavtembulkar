@@ -11,7 +11,7 @@ function Header() {
       <span className="mark">{profile.monogram}</span><span>{profile.firstName}<br />{profile.lastName}</span>
     </a>
     <nav aria-label="Main navigation">
-      <a href="#work">Projects</a><a href="#research">Research</a><a href="#skills">Skills</a><a href="#about">About</a><a href="#contact">Contact</a>
+      <a href="#work">Projects</a><a href="#videos">Videos</a><a href="#research">Research</a><a href="#skills">Skills</a><a href="#about">About</a><a href="#contact">Contact</a>
     </nav>
     <ResumeLink className="resume" />
   </header>;

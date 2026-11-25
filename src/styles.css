@@ -1430,30 +1430,56 @@ code {
   max-width: 680px;
 }
 
-.field-runs, .field-photos {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-}
-
-.dialog-content .field-runs .media:has(video) {
-  aspect-ratio: 9 / 16;
-}
-
 .field-photos {
+  display: grid;
+  gap: 16px;
   grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
 }
 
 .field-photos figure { margin: 0; }
 .field-photos img { display: block; width: 100%; height: auto; }
-#vertiencoder .project-visual img { object-position: center 68%; }
+.video-demos { border-top: 1px solid var(--line); }
 
-@media (max-width: 650px) {
-  .field-runs { grid-template-columns: 1fr; }
+.defense-section h2 { margin: 12px 0; }
+.defense-intro { max-width: 68ch; line-height: 1.7; }
+.defense-intro p + p { margin-top: 1em; }
+.defense-photos {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: clamp(16px, 3vw, 36px);
+  margin-top: 28px;
 }
+.defense-photos figure { margin: 0; }
+.defense-photos img { display: block; width: 100%; height: auto; }
+.defense-photos figcaption { margin-top: 10px; color: var(--muted); font-size: 14px; }
+.lab-banner { background: #10212e; color: #f7f7ef; }
+.lab-banner h2 { margin: 0 0 24px; }
+.lab-banner video { display: block; width: 100%; aspect-ratio: 2 / 1; background: #0b1927; }
+@media (max-width: 650px) {
+  .defense-photos { grid-template-columns: 1fr; }
+}
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(290px, 100%), 1fr));
+  gap: 32px 24px;
+  margin-top: 28px;
+}
+.demo-grid figure { margin: 0; min-width: 0; }
+.demo-grid video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #101c25;
+}
+.demo-grid figcaption { margin-top: 10px; font-weight: 600; }
 
 .lab-footage .media, .project-visual .media:has(img), .dialog-content .media:has(video) {
   aspect-ratio: 16 / 9;
+}
+
+#handover .project-visual .media {
+  aspect-ratio: 4 / 3;
 }
 
 #qwen .media, .dialog-content .media:has([src*="six-arena-views"]) {

@@ -48,6 +48,7 @@ export const projects = [
     mediaLabel: 'Detected corners on a ChArUco calibration board held in front of the lab camera',
     caption: 'Camera calibration · Detected corners follow the board as I change its angle.',
     videoLabel: 'Watch calibration',
+    clipTitle: 'Detecting corners on a ChArUco board',
     file: 'megapose',
     photo: './media/charuco-calibration.webp',
     video: './media/charuco-calibration.mp4',
@@ -71,10 +72,17 @@ export const projects = [
     results: [],
     tags: ['xArm6', 'MediaPipe', 'Viam', 'Coordinate transforms'],
     illustration: 'arm',
-    mediaLabel: 'xArm6, cup, and human handover',
+    mediaLabel: 'The xArm6 at the Viam hackathon workbench with a participant beside the arm',
+    clipTitle: 'Viam hackathon · xArm6 handover demo',
+    caption: 'Viam hackathon · Our team’s tabletop xArm6 demonstration.',
+    videoLabel: 'Watch hackathon demo',
     file: 'xarm-handover',
-    photo: '', // './media/xarm-handover-poster.webp'
-    video: '', // './media/xarm-handover-demo.mp4'
+    cardImage: {
+      src: './media/viam-cup-handover.webp',
+      alt: 'The xArm6 holding a white cup above a participant’s outstretched hand.',
+    },
+    photo: './media/viam-hackathon-arm.webp',
+    video: './media/viam-hackathon-arm.mp4',
     demoUrl: '',
     code: '',
     relatedWork: [],
@@ -98,6 +106,7 @@ export const projects = [
     mediaLabel: 'Six camera views of the physical TurtleBot arena',
     caption: 'Lab footage · Six views of the arena used for multi-robot work.',
     videoLabel: 'Watch arena footage',
+    clipTitle: 'Six camera views of the TurtleBot arena',
     file: 'qwen-turtlebot',
     photo: './media/six-arena-views.webp',
     video: './media/six-arena-views.mp4',
@@ -125,15 +134,17 @@ export const projects = [
     mediaLabel: 'An off-road rover following tire tracks in deep snow',
     caption: 'Outdoor field footage · The rover drives through snow between existing tire tracks.',
     videoLabel: 'Watch snow run',
+    clipTitle: 'Off-road rover following snow tracks',
     file: 'vertiencoder',
+    cardImage: {
+      src: './media/vertiencoder-rover-cover.webp',
+      alt: 'Side view of the four-wheeled rover on patchy snow, with tire tracks in the foreground.',
+    },
     photo: './media/offroad-snow-tracks.webp',
     video: './media/offroad-tracks.mp4',
-    secondRun: {
-      video: './media/offroad-turn.mp4', photo: './media/offroad-snow-turn.webp',
-      label: 'A second run across the snow, seen from farther back.',
-    },
     fieldPhotos: [
       { photo: './media/offroad-rover.webp', label: 'Front view of the rover and its tires on packed snow.' },
+      { photo: './media/offroad-snow-turn.webp', label: 'The rover beside curved tire tracks in the snow.' },
       { photo: './media/offroad-patchy-snow.webp', label: 'The rover on patchy snow with exposed ground between its tracks.' },
       { photo: './media/offroad-laptop.webp', label: 'The field laptop beside the snow-covered test area.' },
     ],
@@ -151,6 +162,7 @@ export const research = [
     description: 'How should a team of TurtleBots search for a source when each robot can only sample signal strength where it stands? I’m integrating the physical testbed for Bayes-Swarm and preparing comparable trials. My reconstructions repository includes the ROS 2 recording tools I use to capture runs for later analysis.',
     repository: { name: 'reconstructions', url: 'https://github.com/CoderAdonis313/reconstructions' },
     photo: './media/arena-setup.webp',
+    clipTitle: 'Setting up the multi-robot testbed',
     video: './media/arena-setup.mp4',
     mediaLabel: 'Abhi placing TurtleBots at different positions in the laboratory arena',
     caption: 'Testbed preparation · Placing the robots before a run.',
@@ -160,11 +172,24 @@ export const research = [
   {
     status: 'Graduate research',
     title: 'Robot Perception Pipeline for 6-DoF Pose Estimation',
-    description: 'I completed graduate research in robot perception and 6-DoF pose estimation at the University at Buffalo.',
+    sectionLink: '#thesis-defense',
+    description: 'I studied how the shape of a visual marker affects a robot’s estimate of its position and orientation, especially when the camera sees it at an angle or part of it is hidden.',
     url: '',
     editingNote: 'Keep this high level while the thesis is under embargo. Add a public abstract or approved link only when shareable.',
   },
 ];
+
+export const assemblyClip = {
+  clipTitle: 'Assembling the TurtleBot Waffle',
+  video: './media/wafflebot-workbench.mp4',
+  photo: './media/wafflebot-workbench.webp',
+};
+
+export const videoDemos = [
+  ...projects,
+  ...research,
+  assemblyClip,
+].filter(clip => clip?.video);
 
 export const skills = [
   { title: 'Perception & vision', items: ['OpenCV', '6-DoF pose estimation', 'Camera calibration', 'RGB-D / point clouds', 'ZED / RealSense SDK'] },
