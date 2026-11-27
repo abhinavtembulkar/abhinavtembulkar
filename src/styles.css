@@ -673,7 +673,12 @@ footer .section {
 footer>div>p:not(.eyebrow) {
   font-size:14px
 }
-.email-link {
+.contact-links {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px 24px
+}
+.contact-link {
   font-size:20px;
   border-bottom:1px solid #7894a5;
   padding-bottom:5px
@@ -1380,7 +1385,7 @@ code {
   flex-shrink:0
 }
 
-.email-link {
+.contact-link {
   font-size:clamp(14px,4.4vw,17px);
   overflow-wrap:anywhere
 }
@@ -1458,7 +1463,7 @@ code {
 .defense-photos figcaption { margin-top: 10px; color: var(--muted); font-size: 14px; }
 .lab-banner { background: #10212e; color: #f7f7ef; }
 .lab-banner h2 { margin: 0 0 24px; }
-.lab-banner video { display: block; width: 100%; aspect-ratio: 2 / 1; background: #0b1927; }
+.lab-banner img { display: block; width: 100%; height: auto; }
 @media (max-width: 650px) {
   .defense-photos { grid-template-columns: 1fr; }
 }

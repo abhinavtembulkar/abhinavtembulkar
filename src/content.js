@@ -9,21 +9,20 @@ export const profile = {
   specialty: 'Robotics & computer vision',
   headline: ['From pixels', 'to robot motion.'],
   subtitle: 'Perception. Code. Real robots.',
-  intro: 'I build camera-based perception systems for robots. I work on live pose tracking for TurtleBots and hand tracking for an xArm6 cup handover.',
+  intro: 'I build vision systems for robots, from real-time pose tracking on mobile robots to gesture-guided handovers with robotic arms.',
   about: 'I’m a Computer Science and Engineering master’s graduate from the University at Buffalo. I enjoy the practical work between a vision model and a moving robot: calibrating cameras, aligning coordinate frames, integrating software, and understanding what happens when tracking fails.',
   availability: 'Interested in robotics software, perception, and computer vision opportunities.',
   educationLine: 'MS CSE · University at Buffalo',
   email: 'abhinavtembulkar@gmail.com',
+  phone: '+1 7165338650',
   github: 'https://github.com/abhinavtembulkar',
   linkedin: 'https://www.linkedin.com/in/abhinav-tembulkar-12b665150/',
-  // Existing public résumé link. Replace with './resume.pdf' after adding
-  // a clean, up-to-date PDF at public/resume.pdf.
-  resume: 'https://www.acsu.buffalo.edu/~atembulk/Robotics_Resume_Perception.pdf',
+  resume: './resume.pdf',
 
   coverPhoto: './media/wafflebot-assembly.webp',
   coverVideo: '', // './media/cover.mp4' — optional muted looping MP4
   coverAlt: 'Abhinav assembling a TurtleBot Waffle at his lab workbench',
-  coverCaption: 'Assembling a waffelbot3',
+  coverCaption: 'Assembling a Wafflebot3',
   portrait: '', // './media/portrait.webp' — optional Design 2 / About photo
   portraitAlt: 'Abhinav Tembulkar',
 };

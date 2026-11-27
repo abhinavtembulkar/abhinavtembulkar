@@ -164,7 +164,11 @@ function About() {
 function Footer() {
   return <footer id="contact"><div className="section">
     <p className="eyebrow">Let’s connect</p><div className="footer-title"><h2>Let’s build something<br />that <em>moves.</em></h2><a className="circle-link" href={`mailto:${profile.email}`} aria-label={`Email ${profile.firstName}`}>↗</a></div>
-    <p>{profile.availability}</p><a className="email-link" href={`mailto:${profile.email}`}>{profile.email}</a>
+    <p>{profile.availability}</p>
+    <div className="contact-links">
+      <a className="contact-link" href={`mailto:${profile.email}`}>{profile.email}</a>
+      <a className="contact-link" href={`tel:${profile.phone.replaceAll(' ', '')}`}>{profile.phone}</a>
+    </div>
     <div className="footer-bottom"><span>© {new Date().getFullYear()} {profile.name}</span><div className="social-links"><Links /></div><a href="#top">Back to top ↑</a></div>
   </div></footer>;
 }
@@ -176,7 +180,13 @@ export default function App() {
     <section className="lab-banner" id="adams-lab" aria-labelledby="lab-banner-title">
       <div className="section">
         <h2 id="lab-banner-title">With my lab mates at ADAMS Lab</h2>
-        <video controls playsInline preload="none" poster="./media/adams-lab-team.webp" src="./media/adams-lab-banner.mp4" aria-labelledby="lab-banner-title" />
+        <img
+          loading="lazy"
+          src="./media/adams-lab-team.webp"
+          width="1440"
+          height="720"
+          alt="Abhinav and his lab mates standing together in front of the ADAMS Lab sign"
+        />
       </div>
     </section>
   </div>;
