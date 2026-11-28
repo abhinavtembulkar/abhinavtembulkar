@@ -1,27 +1,13 @@
-## Hi There, I am Abhinav Tembulkar 👋 
+# Abhinav Tembulkar
 
-[![linkedin badge](https://img.shields.io/badge/abhinavtembulkar-30302f?style=flat&logo=linkedin)](https://www.linkedin.com/in/abhinav-tembulkar-12b665150/)
-[![Gmail Badge](https://img.shields.io/badge/abhinavtembulkar-30302f?style=flat&logo=gmail)](mailto:abhinavtembulkar@gmail.com)
+I build camera-based perception systems for robots. I earned my M.S. in Computer Science and Engineering at the University at Buffalo, where my thesis studied how the shape of a 3D fiducial marker affects pose estimation. Before graduate school, I worked as a full-stack software engineer.
 
-- 👋 Hi, I'm Abhinav Tembulkar, a Computer Science graduate passionate about transforming ideas into smart, autonomous systems. With a strong foundation in full-stack web development and a growing expertise in robotics, machine learning, and computer vision, I'm committed to tackling challenging technical problems.
+[Portfolio and robot demos](https://abhinavtembulkar.github.io/abhinavtembulkar/) · [LinkedIn](https://www.linkedin.com/in/abhinav-tembulkar-12b665150/) · [Email](mailto:abhinavtembulkar@gmail.com)
 
-💻 Previously, I've developed scalable, high-performance web applications. Currently, I'm channeling my programming skills (Python, C++, ROS) into creating intelligent systems like autonomous robots, self-driving tech, and visual perception applications.
+## Selected robotics work
 
-🚀 **Highlighted Projects:**
-- **Robotic Algorithms & Autonomous Navigation** (Path planning, ROS)
-- **Computer Vision Applications** (Image stitching, Face detection, Camera calibration)
-- **Machine Learning & Deep Learning** (Image classification with MNIST & CelebA datasets, Logistic regression, SVM, CNNs)
-- **Data Intensive Computing** (Apache Spark analytics, PageRank algorithms, Data science pipelines)
+- **Live 6-DoF pose tracking.** I adapted MegaPose for live camera input, used the previous frame’s pose to initialize tracking, and added recovery when tracking is lost. I streamed the estimates into ROS 2 for camera-based TurtleBot localization. [Project overview](https://abhinavtembulkar.github.io/abhinavtembulkar/#work)
+- **Cooperative signal-source localization.** I’m bringing a lab testbed back into operation so we can compare how teams of TurtleBots search for a radio source from signal-strength measurements. I integrate the robots, LoRa radios, and experiment logging for physical trials. [Research overview](https://abhinavtembulkar.github.io/abhinavtembulkar/#research)
+- **Vision-guided cup handover.** Our team built an xArm6 demo that hands a cup to a person. I developed the hand and gesture perception modules and used camera-to-world transforms to connect them to the arm’s handover logic. [Team code and demo](https://github.com/N-Raghav/Gesture-Controlled-Cup-Handover)
 
-🌱 I'm eager to collaborate on innovative projects, participate in hackathons, and contribute to open-source communities.
-
-📫 Connect with me on LinkedIn or reach out via email!
-
-🔗 [Portfolio Site](https://www.acsu.buffalo.edu/~atembulk/)
-
-
-### My portfolio site :
-<a href='https://www.acsu.buffalo.edu/~atembulk/'><b>Portfolio Site:</b> https://www.acsu.buffalo.edu/~atembulk/</a>
-
-
-![My GitHub Stats](https://github-readme-stats.vercel.app/api?username=abhinavtembulkar&hide=[%22issues%22,%22contribs%22]&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515)
+I use [CoderAdonis313](https://github.com/CoderAdonis313) for day-to-day robotics research and experiments.
